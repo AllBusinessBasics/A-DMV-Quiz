@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aidan's Driving Test | Utah Permit Practice Coach</title>
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="road-bg" aria-hidden="true"></div>
+    <main class="app-shell">
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">Utah Driver Handbook Study App</p>
+          <h1>Aidan's Driving Test</h1>
+          <p class="hero-text">
+            Practice the handbook in a way that feels closer to the real learner permit
+            test. The quiz leans hard on signs, signals, right-of-way, school buses,
+            lane markings, alcohol laws, and permit basics.
+          </p>
+        </div>
+
+        <div class="hero-card">
+          <h2>What This App Uses</h2>
+          <ul id="hero-facts" class="fact-list"></ul>
+          <div id="source-links" class="source-links"></div>
+        </div>
+      </section>
+
+      <section id="home-screen" class="panel">
+        <div class="panel-head">
+          <div>
+            <p class="section-tag">Choose A Mode</p>
+            <h2>Pick how you want to practice</h2>
+          </div>
+          <p class="panel-copy">
+            Start with Permit Test Mode if you want the closest match to the real written
+            test. Use Signs Drill when you want extra practice with the handbook pictures.
+          </p>
+        </div>
+
+        <div id="mode-grid" class="mode-grid"></div>
+
+        <div class="study-grid">
+          <article class="study-card">
+            <h3>Best First Step</h3>
+            <p>
+              Start with <strong>Permit Test Mode</strong>. It gives you 50 questions,
+              just like the Utah learner permit written test.
+            </p>
+          </article>
+          <article class="study-card">
+            <h3>When You Miss One</h3>
+            <p>
+              Read the short explanation, then try the missed questions again at the end.
+            </p>
+          </article>
+          <article class="study-card">
+            <h3>Good Study Order</h3>
+            <p>
+              Signs first, then right-of-way, then school buses, then alcohol and lane
+              markings.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section id="quiz-screen" class="panel hidden" aria-live="polite">
+        <div class="quiz-topbar">
+          <button id="home-button" class="ghost-button" type="button">Back Home</button>
+          <div class="quiz-stats">
+            <span id="mode-badge" class="mode-badge"></span>
+            <span id="progress-text" class="progress-text"></span>
+            <span id="score-text" class="progress-text"></span>
+          </div>
+        </div>
+
+        <div class="progress-track" aria-hidden="true">
+          <div id="progress-bar" class="progress-bar"></div>
+        </div>
+
+        <article class="question-card">
+          <div class="question-meta">
+            <span id="question-category" class="category-chip"></span>
+            <span id="question-source" class="source-chip"></span>
+          </div>
+
+          <h2 id="question-text" class="question-text"></h2>
+
+          <figure id="image-wrap" class="image-wrap hidden">
+            <img id="question-image" class="question-image" alt="" />
+          </figure>
+
+          <div id="answer-list" class="answer-list"></div>
+
+          <section id="hint-panel" class="hint-panel hidden">
+            <p class="hint-title">Hint</p>
+            <p id="hint-text" class="hint-text"></p>
+          </section>
+
+          <section id="feedback-panel" class="feedback-panel hidden">
+            <p id="feedback-title" class="feedback-title"></p>
+            <p id="feedback-text" class="feedback-text"></p>
+          </section>
+
+          <div class="question-actions">
+            <button id="hint-button" class="secondary-button" type="button">
+              Show Hint
+            </button>
+            <button id="next-button" class="primary-button" type="button" disabled>
+              Next Question
+            </button>
+          </div>
+        </article>
+      </section>
+
+      <section id="results-screen" class="panel hidden" aria-live="polite">
+        <div class="results-header">
+          <p class="section-tag">Finished</p>
+          <h2 id="results-title"></h2>
+          <p id="results-summary" class="panel-copy"></p>
+        </div>
+
+        <div class="results-grid">
+          <article class="result-card strong">
+            <p class="result-label">Your Score</p>
+            <p id="results-score" class="result-value"></p>
+            <p id="results-status" class="result-note"></p>
+          </article>
+
+          <article class="result-card">
+            <p class="result-label">Best Score</p>
+            <p id="best-score" class="result-value smaller"></p>
+            <p class="result-note">Saved on this computer</p>
+          </article>
+
+          <article class="result-card">
+            <p class="result-label">Needs More Work</p>
+            <ul id="weak-areas" class="results-list"></ul>
+          </article>
+        </div>
+
+        <div class="results-actions">
+          <button id="retry-mode-button" class="primary-button" type="button">
+            Try This Mode Again
+          </button>
+          <button id="retry-missed-button" class="secondary-button" type="button">
+            Retry Missed Questions
+          </button>
+          <button id="results-home-button" class="ghost-button" type="button">
+            Pick Another Mode
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <script src="data/questions.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
